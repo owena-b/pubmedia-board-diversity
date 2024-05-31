@@ -15,6 +15,7 @@ CSV_FILE = 'pubmedia-board-members-data.csv'
 
 CSV_HEADERS = [
     'Licensee',
+    'City',
     'State',
     'Name',
     'Occupation',
@@ -33,10 +34,11 @@ with open(CSV_FILE, 'w', newline='', encoding='utf-8') as outfile:
         sections = BeautifulSoup(r.text, 'html.parser').find_all('section')
 
         # Takes the licensee's name from the first table at the top of the page.
-        licensee = str(sections[0].find_all('table')[0].find_all('td')[1].text.strip())
+        licensee = sections[0].find_all('table')[0].find_all('td')[1].text.strip()
 
         # Translates the state abbreviations into their full names.
-        state = state_fixes.get(str(sections[0].find_all('table')[1].find_all('td')[2].text.strip()))
+        state = state_fixes.get(sections[0].find_all('table')[1].find_all('td')[2].text.strip())
+        city = sections[0].find_all('table')[1].find_all('td')[1].text.strip()
 
         # The 'tables' variable excludes the last table, which is a questionnaire about voting and equity interests.
         tables = sections[6].find_all('table')[:-1]
@@ -68,6 +70,7 @@ with open(CSV_FILE, 'w', newline='', encoding='utf-8') as outfile:
             # Write the row
             writer.writerow({
                 'Licensee': licensee,
+                'City': city,
                 'State': state,
                 'Name': name,
                 'Occupation': occupation,
