@@ -6,16 +6,7 @@ api_key = '82d15734a7d6fa98f0968b97f19fdcf6052009b6'
 
 # List of specific cities by FIPS code
 fips_codes = {
-    'New York, NY': '3600000',
-    'Los Angeles, CA': '0600000',
-    'Chicago, IL': '1700000',
-    'Houston, TX': '4800000',
-    'Phoenix, AZ': '0400000',
-    'Philadelphia, PA': '4200000',
-    'San Antonio, TX': '4800000',
-    'San Diego, CA': '0600000',
-    'Dallas, TX': '4800000',
-    'San Jose, CA': '0600000'
+    'West Tisbury, Massachusetts': '78235'
 }
 
 # Build the API request URL
