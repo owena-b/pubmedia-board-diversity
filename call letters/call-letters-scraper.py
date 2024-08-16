@@ -5,7 +5,7 @@ from fixes import state_fixes
 
 URLS_LIST = []
 
-with open('Grantee_Ownership_Report_Links.csv', newline='') as f:
+with open('../source data scrape/Grantee_Ownership_Report_Links.csv', newline='') as f:
     reader = csv.reader(f)
     for row in reader:
         URLS_LIST.append(row[0])
