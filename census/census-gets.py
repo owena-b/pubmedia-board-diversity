@@ -1,5 +1,5 @@
 import csv
-
+import config
 from census import Census
 
 inCSV = 'licensee_locs_2.csv'
@@ -19,7 +19,7 @@ with open(inCSV, newline='') as inFile:
         inList.append(row)
     inList.pop(0)
 
-c = Census(key='82d15734a7d6fa98f0968b97f19fdcf6052009b6', year=2022)
+c = Census(key=config.census_api_key, year=2022)
 
 response = ''
 
