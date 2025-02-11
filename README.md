@@ -1,5 +1,5 @@
 # Public media board diversity
-**Data by Owen Auston-Babcock for [Current](current.org). Story by Tyler Falk and Owen Auston-Babcock**
+**Data by Owen Auston-Babcock for [Current](https://current.org/). Story by Tyler Falk and Owen Auston-Babcock**
 
 ================
 * [Overview](#overview)
@@ -18,38 +18,39 @@ Most governing boards in the U.S. public media system fail to represent the raci
 undercutting the system's mission to reflect the people it intends to serve, according to an analysis of FCC and Census
 Bureau data by Current, the news source for people in public media.
 
-Read the story: [Analysis of public media boards shows lack of racial diversity](current.org/<insert story>) by Tyler 
+Read the story: [Analysis of public media boards shows lack of racial diversity](https://current.org/<insert story>) by Tyler 
 Falk and Owen Auston-Babcock. Owen Auston-Babcock wrote the code contained in this repository and analyzed the data for 
 this story.
 
 ## Data
 *[Back to top](#public-media-board-diversity)*
 
-
+We analyzed the data collected by scripts in this repository in a [Google Sheets file](https://docs.google.com/spreadsheets/d/1ej5esVtmqLXqRsy53mqockGRxzLd78jiUca_CHZBaKI/edit?usp=sharing).
 
 ## Methodology
 *[Back to top](#public-media-board-diversity)*
 
 ### How we analyzed ownership reports
 
-*See [What's in here?]() for explanation of each file in this repository.*
+*See [What's in here?](#whats-in-here) for explanation of each file in this repository.*
 
 This analysis of the system's boards relies on data we scraped from the FCC's Licensing and Management System. Stations,
-which are licensed by the FCC, publish biennial (once every other year) reports on ownership and management. We used these
-reports, which are conveniently published as tables on the LMS's website, 
+which are licensed by the FCC, publish biennial (once every other year) reports on ownership and management.
 
+We first created a list of public broadcasters who receive the Community Service Grant from the Corporation for Public
+Broadcasting, then manually retrieved links to each recipient's most recent biennial report. We whittled down the
+original CPB list of 547 by filtering out school districts, colleges, universities and tribal entities because the 
+duty of these licensees' governing boards is not primarily the operations of a public media station. Therefore, our 
+analysis is limited to stations whose governing boards are responsible for overseeing the broadcaster, and have no
+other primary function. 
 
-
-Using a list provided by the Corporation for Public Broadcasting of Community Service Grant recipients, I collected links to the ownership records for each recipient (which are radio and television licensees).
-
-The list of CSG recipients was whittled down from 547 by filtering out school districts, colleges, universities, and tribal organizations. These licensees often file the station's board as their own governing board, when in reality most boards of trustees and the like are not concerned with their radio or TV station. Tribal-affiliated and Indigenous-focused licensees were also filtered out. Our analysis is concerned with the diversity of these organizations, and stations whose purpose is to cater to an underserved group will inherently have lower diversity scores.
-
-The [links to ownership records](src-scrape/Grantee_Ownership_Report_Links.csv) are contained in a CSV, which is translated to a list. The program iterates over each link, running a GET request and exporting data from the records into a [CSV](src-scrape/pubmedia-board-members-data.csv).
-
-Each line in the outfile is a public media organization's board member. The data can then be used to analyze broader trends across the industry.
+We used the new list to retrieve the biennial reports which are conveniently published as tables on the LMS's website, 
+and created a list of board members, storing information on each member such as their occupation, gender, race and
+ethnicity.
 
 ### How we analyzed Census data
 *[Back to top](#public-media-board-diversity)*
+
 
 
 ### What's in here?
