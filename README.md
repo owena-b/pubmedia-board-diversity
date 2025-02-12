@@ -120,6 +120,7 @@ time-intensive to get specific demographic data on each station for each license
 one station, as `call-letters.csv` demonstrates, and those in our analysis include radio, television and joint licensees.
 
 ## Credit
+*[Back to top](#public-media-board-diversity)* 
 
 Thanks to:
 * [JeffPaine on GitHub](https://gist.github.com/JeffPaine/3083347) for a simple Python dictionary that translates state postal abbreviations into their full common names.
