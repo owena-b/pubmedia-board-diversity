@@ -1,7 +1,5 @@
 import requests
-
-# Replace with your actual API key
-api_key = '82d15734a7d6fa98f0968b97f19fdcf6052009b6'
+import config
 
 # List of specific cities by FIPS code
 fips_codes = {
@@ -14,7 +12,7 @@ params = {
     'get': 'NAME,B02001_007E,B02001_008E,B02001_009E',
     'for': 'place:38250',
     'in': 'state:47',
-    'key': api_key
+    'key': config.API_KEY
 }
 
 # Make the API request
