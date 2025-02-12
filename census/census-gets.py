@@ -2,7 +2,7 @@ import csv
 import config
 from census import Census
 
-inCSV = 'licensee_locs_2.csv'
+inCSV = 'city_fips_2.csv'
 outCSV = 'city_demos_2.csv'
 
 varsList = ['NAME', 'B01003_001E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E',
