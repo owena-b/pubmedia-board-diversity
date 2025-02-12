@@ -15,9 +15,9 @@
 
 Most governing boards in the U.S. public media system fail to represent the racial and ethnic diversity of their
 communities, undercutting the system's mission to reflect the people it intends to serve, according to an analysis of
-FCC and Census Bureau data by Current, the news source for people in public media.
+FCC and Census Bureau data by [Current, the news source for people in public media](https://current.org/).
 
-Read the story: [Analysis of public media boards shows lack of racial diversity](https://current.org/<insert story>) by
+Read the story: [Analysis of public media boards shows lack of racial diversity]() by
 Tyler Falk with Owen Auston-Babcock. Auston-Babcock wrote the code contained in this repository and analyzed the
 data for this story.
 
