@@ -92,8 +92,32 @@ This project contains the following folders and files:
 ## Limitations & Assumptions
 *[Back to top](#public-media-board-diversity)*
 
-Assumes board members put the same identity they would answer on the Census ... Limited to city/state of license, not
-true coverage area ... Excludes stations operated by other entities, but only includes licensees w/ their own boards
+### Only independent governing boards included; CABs excluded
+The primary limitation of this project is that it doesn't represent every station or licensee in the public media system.
+The truth is that it simply can't: Our review of governing boards relies on the assumption that the board is primarily 
+concerned with the operations of a public broadcaster. But many of the system's stations are owned by educational and
+tribal entities, whose governing boards have a primary responsibility separate from their broadcaster(s). Typically,
+the broadcasting operation is just one part of a larger operation, such as a university, for many of these licensees.
+Therefore, our review only includes licensees who are independent of a larger institution and whose governing board is
+entirely responsible for overseeing the broadcaster. Additionally, data is unavailable for many of the licensees who are
+owned by other organizations, where the parent entity or station manager is listed as the sole board member.
+
+Our analysis doesn't include the many community advisory boards, or CABs, that most stations in the system use. These
+volunteer boards do not have decision-making power, but help pubcasters connect with their communities. Though some
+stations recruit governing board members from their CABs, the FCC does not ask licensees to list these volunteers on
+their biennial reports, so the data on CAB members wasn't available.
+
+We additionally make an assumption about the board members themselves: That the identities they put on the FCC reports 
+were the same identities they answered on the Census. This assumption is made easier by the fact that the options for
+racial, ethnic and gender identities on both the FCC reports and the Census are the same.
+
+### Geographic comparisons are limited to area of license, not total service area
+The second part of our data analysis, the comparison of board diversity to the diversity of their community of license,
+does not include the broadcasting area or service area of the licensees' stations. We took strives to explore whether
+it was possible for us to compare board diversity to service area, not just the community the licensee is licensed or 
+headquartered in. After thorough examination of the possibilities, we determined it was too expensive, laborious and
+time-intensive to get specific demographic data on each station for each licensee. Many licensees controlled more than
+one station, as `call-letters.csv` demonstrates, and those in our analysis include radio, television and joint licensees.
 
 ## Credit
 
