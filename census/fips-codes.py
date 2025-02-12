@@ -2,9 +2,6 @@ import requests
 import pandas as pd
 import config
 
-# Replace with your actual API key
-api_key = config.API_KEY
-
 # Base URL for the API
 base_url = 'https://api.census.gov/data/2022/acs/acs5'
 
@@ -12,7 +9,7 @@ base_url = 'https://api.census.gov/data/2022/acs/acs5'
 params = {
     'get': 'NAME,PLACE',
     'for': 'place:*',
-    'key': api_key
+    'key': config.API_KEY
 }
 
 # Make the API request
