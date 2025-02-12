@@ -19,7 +19,7 @@ with open(inCSV, newline='') as inFile:
         inList.append(row)
     inList.pop(0)
 
-c = Census(key=config.census_api_key, year=2022)
+c = Census(key=config.API_KEY, year=2022)
 
 response = ''
 
