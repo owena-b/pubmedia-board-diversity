@@ -8,7 +8,7 @@
   * [How we analyzed Census data](#how-we-analyzed-census-data)
   * [What's in here?](#whats-in-here)
 * [Limitations & Assumptions](#limitations--assumptions)
-* [License & Credits](#license--credits)
+* [Credit](#credit)
 
 ## Overview
 *[Back to top](#public-media-board-diversity)*
@@ -62,34 +62,32 @@ Committee for Information Technology Standards (INCITS) codes, formerly known as
 Series (FIPS) codes (we primarily call it FIPS, but use INCITS and FIPS interchangeably). GNIS has its own codes, but
 FIPS was compatible with the `census` Python package.
 
-Once the list containing FIPS codes was made, we 
+Once the list containing FIPS codes was made, we used `census` to interface with the Census Bureau's API, and got
+population data for our places of interest. We had to run the code twice on different inputs, since the first list did 
+not include some places included in our analysis (hence, `city_demos_2.csv` and `city_fips_2.csv`).
 
 ### What's in here?
 *[Back to top](#public-media-board-diversity)*
 
 This project contains the following folders and files:
-* `call-letters` -- 
-  * `call-letters.csv` -- 
-  * `call-letters-scraper.py` -- 
-* `census` -- 
-  * `acs-requests.py` -- 
-  * `census-gets.py` -- 
-  * `cities_of_license.csv` -- 
-  * `city_demos.csv` -- 
-  * `city_demos2.csv` -- 
-  * `fips-codes.py` -- 
-  * `licensee_locs.csv` -- 
-  * `licensee_locs2.csv` -- 
-  * `test.csv` -- 
-  * `us_places_fips.csv` -- 
-* `src-scrape` -- 
-  * `board-scraper.py` -- 
-  * `date-scraper.py` -- 
-  * `dates.csv` -- 
-  * `dates.py` -- 
-  * `fixes.py` -- 
-  * `Grantee_Ownership_Report_Links.csv` -- 
-  * `pubmedia-board-members-data.csv` -- 
+* `call-letters` — Code and files used to collect a list of call letters for stations operated by licensees in our analysis.
+  * `call-letters.csv` — List of licensees, their locations and their call numbers registered with the FCC.
+  * `call-letters-scraper.py` — The code to pull call numbers from the biennial ownership reports.
+  * `fixes.py` — A Python dictionary to expand states' postal abbreviations to their full names.
+* `census` — Code and data used to retrieve Census data for cities/states of license.
+  * `census.py` — The code to get demographics for the places in our analysis from the Census Bureau.
+  * `city_demos.csv` — Output from first run of `census-gets.py`, population data for places in `city-fips.csv`
+  * `city_demos2.csv` — 〃, second run
+  * `city-fips.csv` — List of places in our first run of `census-gets.py`
+  * `city-fips_2.csv` — List of places that were left out of first run
+* `src-scrape` — Code and data used to retrieve data on board members from the FCC.
+  * `board-scraper.py` — The code to get data from the FCC on more than 3,000 public media board members.
+  * `date-range.py` — The code to get a date range of the reports in our analysis.
+  * `date-scraper.py` — The code to get a list of all the report dates in our analysis.
+  * `dates.csv` — A list of all the report dates in our analysis.
+  * `fixes.py` — A Python dictionary to expand states' postal abbreviations to their full names.
+  * `Grantee_Ownership_Report_Links.csv` — A list of all the links to the biennial ownership reports in our analysis.
+  * `pubmedia-board-members-data.csv` — Data on more than 3,000 public media board members.
 
 ## Limitations & Assumptions
 *[Back to top](#public-media-board-diversity)*
@@ -97,12 +95,12 @@ This project contains the following folders and files:
 Assumes board members put the same identity they would answer on the Census ... Limited to city/state of license, not
 true coverage area ... Excludes stations operated by other entities, but only includes licensees w/ their own boards
 
-## License & Credits
+## Credit
 
-**Credit:**
-[JeffPaine on GitHub](https://gist.github.com/JeffPaine/3083347) for a simple Python dictionary that translates state postal abbreviations into their full 
-common names.
-
-This work attempts, as best it can, to adhere to the best practices of data journalism. We took inspiration from NPR
-Visuals' [best practices](https://github.com/nprapps/bestpractices) and The Baltimore Banner's README files, such as 
-[this one](https://github.com/The-Baltimore-Banner/youth-gun-violence) on 2023 youth gun violence.
+Thanks to:
+* [JeffPaine on GitHub](https://gist.github.com/JeffPaine/3083347) for a simple Python dictionary that translates state postal abbreviations into their full common names.
+* [News Nerdery](https://newsnerdery.org/) community members and AU data journalism professor Aarushi Sahejpal for
+sharing resources and knowledge. This work attempts, as best it can, to adhere to the best practices of data journalism.
+We took inspiration from NPR Visuals' [best practices](https://github.com/nprapps/bestpractices) and The Baltimore
+Banner's README files, such as [this one](https://github.com/The-Baltimore-Banner/youth-gun-violence) on 2023 youth gun
+violence.
