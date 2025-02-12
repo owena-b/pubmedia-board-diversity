@@ -10,14 +10,13 @@ varsList = ['NAME', 'B01003_001E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 
 headers = ['Place', 'Total', 'White alone', 'Black or African American alone', 'American Indian and Alaska Native alone',
            'Asian alone', 'Native Hawaiian and Other Pacific Islander alone', 'Multiracial', 'Hispanic or Latino']
 
-inList = []
-outList = []
+locList = []
 
 with open(inCSV, newline='') as inFile:
-    reader = csv.reader(inFile)
-    for row in reader:
-        inList.append(row)
-    inList.pop(0)
+    rows = csv.reader(inFile)
+    for row in rows:
+        locList.append(row)
+    locList.pop(0)
 
 c = Census(key=config.API_KEY, year=2022)
 
@@ -26,7 +25,7 @@ response = ''
 with open(outCSV, 'w', newline='', encoding='utf-8') as outFile:
     writer = csv.DictWriter(outFile, fieldnames=headers)
     writer.writeheader()
-    for loc in inList:
+    for loc in locList:
         if loc[2] == 'ERROR':
             continue
         if loc[2] == 'place':
