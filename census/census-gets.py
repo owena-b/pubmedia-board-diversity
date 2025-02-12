@@ -7,7 +7,8 @@ outCSV = 'city_demos.csv'
 
 varsList = ['NAME', 'B01003_001E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E',
             'B02001_008E', 'B03003_003E']
-headers = ['Place', 'Total', 'White alone', 'Black or African American alone', 'American Indian and Alaska Native alone',
+headers = ['Place', 'Total', 'White alone', 'Black or African American alone',
+           'American Indian and Alaska Native alone',
            'Asian alone', 'Native Hawaiian and Other Pacific Islander alone', 'Multiracial', 'Hispanic or Latino']
 
 locList = []
@@ -28,11 +29,11 @@ with open(outCSV, 'w', newline='', encoding='utf-8') as outFile:
     for loc in locList:
         if loc[2] == 'ERROR':
             continue
-        if loc[2] == 'place':
+        if loc[2] == 'place':  # if the location is a traditional Census-Designated Place or political entity
             response = c.acs5.state_place(varsList, loc[4], loc[3])[0]
-        elif loc[2] == 'cousub':
+        elif loc[2] == 'cousub':  # if the location is treated by Census Bureau as a county subdivision
             response = c.acs5.state_county_subdivision(varsList, loc[4], loc[5], loc[3])[0]
-        elif loc[2] == 'state':
+        elif loc[2] == 'state':  # if the location is a state
             response = c.acs5.state(varsList, loc[4])[0]
 
         if type(response) is dict and bool(response):  # check if it's a non-empty dictionary
@@ -60,4 +61,3 @@ with open(outCSV, 'w', newline='', encoding='utf-8') as outFile:
                 'Multiracial': multiracial,
                 'Hispanic or Latino': hispanic
             })
-
