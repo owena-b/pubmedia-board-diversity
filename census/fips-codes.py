@@ -1,8 +1,9 @@
 import requests
 import pandas as pd
+import config
 
 # Replace with your actual API key
-api_key = '82d15734a7d6fa98f0968b97f19fdcf6052009b6'
+api_key = config.API_KEY
 
 # Base URL for the API
 base_url = 'https://api.census.gov/data/2022/acs/acs5'
