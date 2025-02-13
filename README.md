@@ -34,18 +34,18 @@ We analyzed the data collected by scripts in this repository in a [Google Sheets
 ### How we analyzed ownership reports
 *[Back to top](#public-media-board-diversity)*
 
-This analysis of the system's boards relies on data we scraped from the FCC's Licensing and Management System. Stations,
+This analysis of the system's boards relies on data we scraped from the FCC's Licensing and Management System. Stations, 
 which are licensed by the FCC, publish biennial (once every other year) reports on ownership and management.
 
-We first created a list of public broadcasters who receive the Community Service Grant from the Corporation for Public
-Broadcasting, then manually retrieved links to each recipient's most recent biennial report. We whittled down the
-original CPB list of 547 by filtering out school districts, colleges, universities and tribal entities because the 
-duty of these licensees' governing boards is not primarily the operations of a public media station. Therefore, our 
-analysis is limited to stations whose governing boards are responsible for overseeing the broadcaster, and have no
-other primary function. 
+We first created a list of public broadcasters who receive Community Service Grants from the Corporation for Public 
+Broadcasting, then manually retrieved links to each recipient's most recent biennial report. We whittled down the 
+original CPB list of 547 by filtering out school districts, colleges, universities and tribal entities because the duty 
+of these licensees' governing boards is not primarily the operations of a public media station. Therefore, our analysis 
+is limited to stations whose governing boards are responsible for overseeing the broadcaster and have no other primary 
+function.
 
 We used the new list to retrieve the biennial reports, which are conveniently published as tables on the LMS's website, 
-and created a list of board members, storing information on each member such as their occupation, gender, race and
+and created a list of board members, storing information on each member such as their occupation, gender, race and 
 ethnicity.
 
 ### How we analyzed Census data
@@ -113,17 +113,18 @@ racial, ethnic and gender identities on both the FCC reports and the Census are 
 
 ### Geographic comparisons are limited to area of license, not total service area
 The second part of our data analysis, the comparison of board diversity to the diversity of their community of license,
-does not include the broadcasting area or service area of the licensees' stations. We took strives to explore whether
-it was possible for us to compare board diversity to service area, not just the community the licensee is licensed or 
-headquartered in. After thorough examination of the possibilities, we determined it was too expensive, laborious and
-time-intensive to get specific demographic data on each station for each licensee. Many licensees controlled more than
-one station, as `call-letters.csv` demonstrates, and those in our analysis include radio, television and joint licensees.
+does not include the broadcasting area or service area of the licensees' stations. We explored whether it was possible 
+for us to compare board diversity to service area, not just the community the licensee is licensed to or headquartered 
+in. After thorough examination of the possibilities, we determined it was too expensive, laborious and time-intensive to
+get specific demographic data on each station for each licensee. Many licensees control more than one station, as 
+`call-letters.csv` demonstrates, and our analysis includes radio, television and joint licensees.
 
 ## Credit
 *[Back to top](#public-media-board-diversity)* 
 
 Thanks to:
-* [JeffPaine on GitHub](https://gist.github.com/JeffPaine/3083347) for a simple Python dictionary that translates state postal abbreviations into their full common names.
+* [JeffPaine on GitHub](https://gist.github.com/JeffPaine/3083347) for a simple Python dictionary that translates state postal abbreviations into their full 
+common names.
 * [News Nerdery](https://newsnerdery.org/) community members and AU data journalism professor Aarushi Sahejpal for
 sharing resources and knowledge. This work attempts, as best it can, to adhere to the best practices of data journalism.
 We took inspiration from NPR Visuals' [best practices](https://github.com/nprapps/bestpractices) and The Baltimore
