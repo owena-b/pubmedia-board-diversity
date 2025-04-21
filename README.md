@@ -19,7 +19,7 @@ FCC and Census Bureau data by [Current, the news source for people in public med
 
 Read the story: [Analysis finds most station boards fall short in reflecting community diversity](https://current.org/2025/02/analysis-finds-most-station-boards-fall-short-in-reflecting-community-diversity/)
 by Tyler Falk with Owen Auston-Babcock. Auston-Babcock wrote the code contained in this repository and analyzed the
-data for this story.
+data for this story, with help from Mike Janssen.
 
 ## Data
 *[Back to top](#public-media-board-diversity)*
